@@ -94,5 +94,27 @@
       "description": "Switches all spots (1-3) on for a given duration, then switches back to their previous state.",
       "tm:ref": "https://eclipse-ditto.github.io/ditto-examples/wot/models/switchable-1.0.0.tm.jsonld#/actions/switch-on-for-duration"
     }
+  },
+  "events": {
+    "testevent": {
+      "title": "testevent",
+      "forms": [],
+      "description": "test event",
+      "data": {
+        "title": "test event payload",
+        "type": "object",
+        "properties": {
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
   }
 }
