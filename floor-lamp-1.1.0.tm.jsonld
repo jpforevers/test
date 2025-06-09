@@ -72,14 +72,12 @@
       "title": "stringproperty1",
       "observable": true,
       "readOnly": false,
-      "forms": [],
       "type": "string"
     },
     "stringproperty2": {
       "title": "stringproperty2",
       "observable": false,
       "readOnly": false,
-      "forms": [],
       "type": "string"
     }
   },
