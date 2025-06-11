@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "time": "http://www.w3.org/2006/time#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "zuowei B021 Thing Model",
+  "description": "zuowei B021物模型",
+  "version": {
+    "model": "0.1.2"
+  },
+  "links": [
+    {
+      "rel": "tm:submodel",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-FuncControl-0.1.2.tm.jsonld",
+      "type": "application/tm+json",
+      "instanceName": "FuncControl"
+    },
+    {
+      "rel": "tm:submodel",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-DeviceInfo-0.1.2.tm.jsonld",
+      "type": "application/tm+json",
+      "instanceName": "DeviceInfo"
+    },
+    {
+      "rel": "tm:submodel",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-RuntimeStatus-0.1.2.tm.jsonld",
+      "type": "application/tm+json",
+      "instanceName": "RuntimeStatus"
+    },
+    {
+      "rel": "tm:submodel",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-RuntimeData-0.1.2.tm.jsonld",
+      "type": "application/tm+json",
+      "instanceName": "RuntimeData"
+    },
+    {
+      "rel": "tm:submodel",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-CmdControl-0.1.2.tm.jsonld",
+      "type": "application/tm+json",
+      "instanceName": "CmdControl"
+    }
+  ]
+}

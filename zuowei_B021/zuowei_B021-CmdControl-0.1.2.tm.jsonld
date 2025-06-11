@@ -1,0 +1,90 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "time": "http://www.w3.org/2006/time#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "zuowei B021 Thing Model CmdControl",
+  "description": "zuowei B021物模型 CmdControl功能模块",
+  "version": {
+    "model": "0.1.2"
+  },
+  "actions": {
+    "PowerSwitch": {
+      "title": "开关机设置",
+      "input": {
+        "title": "开关机设置参数",
+        "type": "integer",
+        "description": "0=关机；1=开机",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "output": {
+        "title": "开关机设置响应",
+        "type": "integer",
+        "enum": [
+          0,
+          5,
+          6
+        ]
+      }
+    },
+    "AutoModeSet": {
+      "title": "自动模式设置",
+      "input": {
+        "title": "自动模式设置参数",
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ],
+        "description": "0-手动模式，1-自动模式"
+      },
+      "output": {
+        "title": "自动模式设置响应",
+        "type": "integer",
+        "enum": [
+          0,
+          5,
+          6,
+          7,
+          8,
+          11
+        ]
+      }
+    },
+    "RunModeSet": {
+      "title": "运行业务设置",
+      "input": {
+        "title": "运行业务设置参数",
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "description": "0-停止业务,1-开始大便,2-开始小便,3-开始清洗,4-开始干燥,7-开始空气清洁"
+      },
+      "output": {
+        "title": "运行业务设置响应",
+        "type": "integer",
+        "enum": [
+          0,
+          5,
+          7,
+          8,
+          9,
+          11
+        ]
+      }
+    }
+  }
+}

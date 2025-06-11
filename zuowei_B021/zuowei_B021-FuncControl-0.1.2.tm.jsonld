@@ -1,0 +1,89 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "time": "http://www.w3.org/2006/time#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "zuowei B021 Thing Model FuncControl",
+  "description": "zuowei B021物模型 FuncControl功能模块",
+  "version": {
+    "model": "0.1.2"
+  },
+  "properties": {
+    "SetHydraulicPressure": {
+      "title": "设置水压",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低，1-中，2-高",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "SetWaterTemp": {
+      "title": "设置水温",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低-28度，1-中-32度，2-高-35度",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "unit": "om:degreeCelsius"
+    },
+    "SetWindTemp": {
+      "title": "设置风温",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低-25度，1-中-30度，2-高-35度",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "unit": "om:degreeCelsius"
+    },
+    "SetBlowdown": {
+      "title": "设置排污抽气压",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低，1-中，2-高",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "VolumeControl": {
+      "title": "音量调节",
+      "type": "integer",
+      "readOnly": false,
+      "description": "",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "TurnOverReminderSwitch": {
+      "title": "翻身提醒开关",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-关，1-开",
+      "enum": [
+        0,
+        1
+      ]
+    }
+  }
+}

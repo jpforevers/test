@@ -1,0 +1,134 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "time": "http://www.w3.org/2006/time#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "zuowei B021 Thing Model RuntimeStatus",
+  "description": "zuowei B021物模型 RuntimeStatus功能模块",
+  "version": {
+    "model": "0.1.2"
+  },
+  "properties": {
+    "PowerStatus": {
+      "title": "开关机状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0=关机；1=开机，开机后收到主动上传的本条指令，说明开机初始化流程结束。",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "Timestamp": {
+      "title": "时间戳",
+      "type": "object",
+      "readOnly": false,
+      "properties": {
+        "Time": {
+          "type": "integer",
+          "description": "从2000-01-01 00:00开始的秒数"
+        },
+        "Zone": {
+          "type": "integer",
+          "default": 8,
+          "minimum": -12,
+          "maximum": 12
+        }
+      },
+      "required": [
+        "Time",
+        "Zone"
+      ]
+    },
+    "AutoMode": {
+      "title": "自动模式",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0-手动模式，1-自动模式",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "RunModeStatus": {
+      "title": "运行业务状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0-无业务运行，1-大便处理中，2-小便处理中，3-清洗处理中，4-干燥处理中，5-管道清洗处理中，6-自动送风处理中，7-空气清洁处理中",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "WaterTemperature": {
+      "title": "水温",
+      "type": "integer",
+      "readOnly": true,
+      "description": "值：0-45  对应0℃-45℃，绿色 带℃单位；值：240 显示Err0 红色，不带℃单位；值：241 显示Err1 红色，不带℃单位；值：242 显示Err2 红色，不带℃单位；值：255 显示Err15 红色，不带℃单位；其他：显示Err16 红色，不带℃单位",
+      "unit": "om:degreeCelsius"
+    },
+    "WindTemperature": {
+      "title": "风温",
+      "type": "integer",
+      "readOnly": true,
+      "description": "值：0-45  对应0℃-45℃，绿色 带℃单位；值：240 显示Err0 红色，不带℃单位；值：241 显示Err1 红色，不带℃单位；值：242 显示Err2 红色，不带℃单位；值：243 显示Err3 红色，不带℃单位；其他：显示Err4 红色，不带℃单位",
+      "unit": "om:degreeCelsius"
+    },
+    "SewageBucket": {
+      "title": "污水桶状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0正常，1-将满，2-已满，3-无桶，4-异常",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "WaterBucket": {
+      "title": "清水桶状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0正常，1-缺水，2-无桶，3-异常",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "WorkedTime": {
+      "title": "运行时间",
+      "type": "object",
+      "readOnly": true,
+      "properties": {
+        "CurrT": {
+          "title": "本次开机累计时间",
+          "type": "integer",
+          "description": "本次开机累计时间，单位分钟"
+        },
+        "TotalT": {
+          "title": "机器累计开机时间",
+          "type": "integer",
+          "description": "机器累计开机时间，单位分钟"
+        }
+      },
+      "required": [
+        "CurrT",
+        "TotalT"
+      ]
+    }
+  }
+}

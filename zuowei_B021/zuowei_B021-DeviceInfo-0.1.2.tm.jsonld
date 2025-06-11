@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "time": "http://www.w3.org/2006/time#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "zuowei B021 Thing Model DeviceInfo",
+  "description": "zuowei B021物模型 DeviceInfo功能模块",
+  "version": {
+    "model": "0.1.2"
+  },
+  "properties": {
+    "DeviceType": {
+      "title": "设备类型",
+      "type": "object",
+      "readOnly": true,
+      "description": "",
+      "properties": {
+        "Type": {
+          "type": "string",
+          "const": "Toilet"
+        },
+        "Numb": {
+          "type": "string",
+          "const": "ZW279"
+        },
+        "Factory": {
+          "type": "string",
+          "const": "zuowei"
+        }
+      },
+      "required": [
+        "Type",
+        "Numb",
+        "Factory"
+      ]
+    },
+    "MasterSoftVer": {
+      "title": "主机软件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    },
+    "LcdSoftVer": {
+      "title": "显示屏软件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    },
+    "HeadSoftVer": {
+      "title": "工作头软件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    },
+    "HardwareVer": {
+      "title": "主机硬件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    }
+  }
+}

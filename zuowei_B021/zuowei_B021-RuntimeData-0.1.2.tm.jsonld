@@ -1,0 +1,91 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "time": "http://www.w3.org/2006/time#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "zuowei B021 Thing Model RuntimeData",
+  "description": "zuowei B021物模型 RuntimeData功能模块",
+  "version": {
+    "model": "0.1.2"
+  },
+  "events": {
+    "UseRecord": {
+      "title": "使用记录上报",
+      "data": {
+        "type": "object",
+        "properties": {
+          "Mode": {
+            "title": "记录类型",
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "description": "1-大便，2-小便，3-清洗，4-干燥"
+          },
+          "Timestamp": {
+            "title": "记录时间",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Mode",
+          "Timestamp"
+        ]
+      }
+    },
+    "Error": {
+      "title": "故障上报",
+      "data": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "title": "故障码",
+            "type": "integer",
+            "enum": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36],
+            "description": "0-机器漏水 ；1-清水加热系统故障 ；2-过滤器已满 ；3-清水消毒器有故障，请及时维修；4-空气加热器有故障，请及时维修；5-污水消毒器有故障，请及时维修；6-排污系统有故障，请及时维修；7-工作头丢失 ；8-工作头有故障，请及时维修；9-空气净化系统有故障，请及时维修；10-出水系统堵塞，请及时维修； 11-吸污系统堵塞；12-工作头前后有倾斜；13-过零检测故障；14-污水桶水位检测故障 ；15-清水水位检测故障；16-吸污前端堵塞；17-出水系统水压过大；18-出水系统水压过小；19-大便检测异常 ；20-清水加热超时；21-清水补水超时；22-遥控器连接故障；23-显示屏连接故障；24-翻身检测故障；25-清水温度传感器1开路；26-清水温度传感器1短路；27-清水温度传感器1过低；28-清水温度传感器1过高；29-清水温度传感器2开路；30-清水温度传感器2短路；31-清水温度传感器2过低 ；32-清水温度传感器2过高 ；33-风温温度传感器开路 ；34-风温温度传感器短路；35-风温温度传感器过低；36-风温温度传感器过高；"
+          },
+          "Timestamp": {
+            "title": "记录时间",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ErrorCode",
+          "Timestamp"
+        ]
+      }
+    },
+    "TurnOverRecord": {
+      "title": "翻身上报",
+      "data": {
+        "type": "object",
+        "properties": {
+          "Type": {
+            "title": "翻身类型",
+            "type": "integer",
+            "enum": [
+              0,
+              1
+            ],
+            "description": "0-两小时未翻身提醒，1-翻身记录"
+          },
+          "Timestamp": {
+            "title": "记录时间",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Mode",
+          "Timestamp"
+        ]
+      }
+    }
+  }
+}
