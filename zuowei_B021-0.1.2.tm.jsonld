@@ -12,15 +12,6 @@
   "version": {
     "model": "0.1.2"
   },
-  "schemaDefinitions": {
-    "ErrorCode": {
-      "title": "错误码",
-      "type": "integer",
-      "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12],
-      "description": "0-正常；1-错误1：该属性不存在；2-错误2：该事件不存在；3-错误3：该服务不存在；4-错误4：无访问权限；5-错误5：值(参数)错误；6-错误6：值相同；7-错误7：设备已关机；8-错误8：警告冲突；9-错误9：模式冲突；10-错误10：业务冲突；11-错误11：业务未停止；12-错误12：执行失败"
-    }
-  },
-  "tm:optional": [],
   "properties": {
     "SetHydraulicPressure": {
       "title": "设置水压",
@@ -351,7 +342,12 @@
       },
       "output": {
         "title": "开关机设置响应",
-        "tm:ref": "#/schemaDefinitions/ErrorCode"
+        "type": "integer",
+        "enum": [
+          0,
+          5,
+          6
+        ]
       }
     },
     "AutoModeSet": {
@@ -367,7 +363,15 @@
       },
       "output": {
         "title": "自动模式设置响应",
-        "tm:ref": "#/schemaDefinitions/ErrorCode"
+        "type": "integer",
+        "enum": [
+          0,
+          5,
+          6,
+          7,
+          8,
+          11
+        ]
       }
     },
     "RunModeSet": {
@@ -387,7 +391,15 @@
       },
       "output": {
         "title": "运行业务设置响应",
-        "tm:ref": "#/schemaDefinitions/ErrorCode"
+        "type": "integer",
+        "enum": [
+          0,
+          5,
+          7,
+          8,
+          9,
+          11
+        ]
       }
     }
   }
