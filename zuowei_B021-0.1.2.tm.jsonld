@@ -1,0 +1,393 @@
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    {
+      "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "time": "http://www.w3.org/2006/time#"
+    }
+  ],
+  "@type": "tm:ThingModel",
+  "title": "zuowei B021 Thing Model",
+  "description": "zuowei B021物模型",
+  "version": {
+    "model": "0.1.2"
+  },
+  "schemaDefinitions": {
+    "ErrorCode": {
+      "title": "错误码",
+      "type": "integer",
+      "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12],
+      "description": "0-正常；1-错误1：该属性不存在；2-错误2：该事件不存在；3-错误3：该服务不存在；4-错误4：无访问权限；5-错误5：值(参数)错误；6-错误6：值相同；7-错误7：设备已关机；8-错误8：警告冲突；9-错误9：模式冲突；10-错误10：业务冲突；11-错误11：业务未停止；12-错误12：执行失败"
+    }
+  },
+  "properties": {
+    "SetHydraulicPressure": {
+      "title": "设置水压",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低，1-中，2-高",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "SetWaterTemp": {
+      "title": "设置水温",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低-28度，1-中-32度，2-高-35度",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "unit": "om:degreeCelsius"
+    },
+    "SetWindTemp": {
+      "title": "设置风温",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低-25度，1-中-30度，2-高-35度",
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "unit": "om:degreeCelsius"
+    },
+    "SetBlowdown": {
+      "title": "设置排污抽气压",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-低，1-中，2-高",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "VolumeControl": {
+      "title": "音量调节",
+      "type": "integer",
+      "readOnly": false,
+      "description": "",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "TurnOverReminderSwitch": {
+      "title": "翻身提醒开关",
+      "type": "integer",
+      "readOnly": false,
+      "description": "0-关，1-开",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "DeviceType": {
+      "title": "设备类型",
+      "type": "object",
+      "readOnly": true,
+      "description": "",
+      "properties": {
+        "Type": {
+          "type": "string",
+          "const": "Toilet"
+        },
+        "Numb": {
+          "type": "string",
+          "const": "ZW279"
+        },
+        "Factory": {
+          "type": "string",
+          "const": "zuowei"
+        }
+      },
+      "required": [
+        "Type",
+        "Numb",
+        "Factory"
+      ]
+    },
+    "MasterSoftVer": {
+      "title": "主机软件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    },
+    "LcdSoftVer": {
+      "title": "显示屏软件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    },
+    "HeadSoftVer": {
+      "title": "工作头软件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    },
+    "HardwareVer": {
+      "title": "主机硬件版本",
+      "type": "string",
+      "readOnly": true,
+      "description": ""
+    },
+    "PowerStatus": {
+      "title": "开关机状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0=关机；1=开机，开机后收到主动上传的本条指令，说明开机初始化流程结束。",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "Timestamp": {
+      "title": "时间戳",
+      "type": "object",
+      "readOnly": false,
+      "properties": {
+        "Time": {
+          "type": "integer",
+          "description": "从2000-01-01 00:00开始的秒数"
+        },
+        "Zone": {
+          "type": "integer",
+          "default": 8,
+          "minimum": -12,
+          "maximum": 12
+        }
+      },
+      "required": [
+        "Time",
+        "Zone"
+      ]
+    },
+    "AutoMode": {
+      "title": "自动模式",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0-手动模式，1-自动模式",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "RunModeStatus": {
+      "title": "运行业务状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0-无业务运行，1-大便处理中，2-小便处理中，3-清洗处理中，4-干燥处理中，5-管道清洗处理中，6-自动送风处理中，7-空气清洁处理中",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "WaterTemperature": {
+      "title": "水温",
+      "type": "integer",
+      "readOnly": true,
+      "description": "值：0-45  对应0℃-45℃，绿色 带℃单位；值：240 显示Err0 红色，不带℃单位；值：241 显示Err1 红色，不带℃单位；值：242 显示Err2 红色，不带℃单位；值：255 显示Err15 红色，不带℃单位；其他：显示Err16 红色，不带℃单位",
+      "unit": "om:degreeCelsius"
+    },
+    "WindTemperature": {
+      "title": "风温",
+      "type": "integer",
+      "readOnly": true,
+      "description": "值：0-45  对应0℃-45℃，绿色 带℃单位；值：240 显示Err0 红色，不带℃单位；值：241 显示Err1 红色，不带℃单位；值：242 显示Err2 红色，不带℃单位；值：243 显示Err3 红色，不带℃单位；其他：显示Err4 红色，不带℃单位",
+      "unit": "om:degreeCelsius"
+    },
+    "SewageBucket": {
+      "title": "污水桶状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0正常，1-将满，2-已满，3-无桶，4-异常",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "WaterBucket": {
+      "title": "清水桶状态",
+      "type": "integer",
+      "readOnly": true,
+      "description": "0正常，1-缺水，2-无桶，3-异常",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "WorkedTime": {
+      "title": "运行时间",
+      "type": "object",
+      "readOnly": true,
+      "properties": {
+        "CurrT": {
+          "title": "本次开机累计时间",
+          "type": "integer",
+          "description": "本次开机累计时间，单位分钟"
+        },
+        "TotalT": {
+          "title": "机器累计开机时间",
+          "type": "integer",
+          "description": "机器累计开机时间，单位分钟"
+        }
+      },
+      "required": [
+        "CurrT",
+        "TotalT"
+      ]
+    }
+  },
+  "events": {
+    "UseRecord": {
+      "title": "使用记录上报",
+      "data": {
+        "type": "object",
+        "properties": {
+          "Mode": {
+            "title": "记录类型",
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "description": "1-大便，2-小便，3-清洗，4-干燥"
+          },
+          "Timestamp": {
+            "title": "记录时间",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Mode",
+          "Timestamp"
+        ]
+      }
+    },
+    "Error": {
+      "title": "故障上报",
+      "data": {
+        "type": "object",
+        "properties": {
+          "ErrorCode": {
+            "title": "故障码",
+            "type": "integer",
+            "enum": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36],
+            "description": "0-机器漏水 ；1-清水加热系统故障 ；2-过滤器已满 ；3-清水消毒器有故障，请及时维修；4-空气加热器有故障，请及时维修；5-污水消毒器有故障，请及时维修；6-排污系统有故障，请及时维修；7-工作头丢失 ；8-工作头有故障，请及时维修；9-空气净化系统有故障，请及时维修；10-出水系统堵塞，请及时维修； 11-吸污系统堵塞；12-工作头前后有倾斜；13-过零检测故障；14-污水桶水位检测故障 ；15-清水水位检测故障；16-吸污前端堵塞；17-出水系统水压过大；18-出水系统水压过小；19-大便检测异常 ；20-清水加热超时；21-清水补水超时；22-遥控器连接故障；23-显示屏连接故障；24-翻身检测故障；25-清水温度传感器1开路；26-清水温度传感器1短路；27-清水温度传感器1过低；28-清水温度传感器1过高；29-清水温度传感器2开路；30-清水温度传感器2短路；31-清水温度传感器2过低 ；32-清水温度传感器2过高 ；33-风温温度传感器开路 ；34-风温温度传感器短路；35-风温温度传感器过低；36-风温温度传感器过高；"
+          },
+          "Timestamp": {
+            "title": "记录时间",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ErrorCode",
+          "Timestamp"
+        ]
+      }
+    },
+    "TurnOverRecord": {
+      "title": "翻身上报",
+      "data": {
+        "type": "object",
+        "properties": {
+          "Type": {
+            "title": "翻身类型",
+            "type": "integer",
+            "enum": [
+              0,
+              1
+            ],
+            "description": "0-两小时未翻身提醒，1-翻身记录"
+          },
+          "Timestamp": {
+            "title": "记录时间",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Mode",
+          "Timestamp"
+        ]
+      }
+    }
+  },
+  "actions": {
+    "PowerSwitch": {
+      "title": "开关机设置",
+      "input": {
+        "title": "开关机设置参数",
+        "type": "integer",
+        "description": "0=关机；1=开机",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "output": {
+        "title": "开关机设置响应",
+        "tm:ref": "#/schemaDefinitions/ErrorCode"
+      }
+    },
+    "AutoModeSet": {
+      "title": "自动模式设置",
+      "input": {
+        "title": "自动模式设置参数",
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ],
+        "description": "0-手动模式，1-自动模式"
+      },
+      "output": {
+        "title": "自动模式设置响应",
+        "tm:ref": "#/schemaDefinitions/ErrorCode"
+      }
+    },
+    "RunModeSet": {
+      "title": "运行业务设置",
+      "input": {
+        "title": "运行业务设置参数",
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "description": "0-停止业务,1-开始大便,2-开始小便,3-开始清洗,4-开始干燥,7-开始空气清洁"
+      },
+      "output": {
+        "title": "运行业务设置响应",
+        "tm:ref": "#/schemaDefinitions/ErrorCode"
+      }
+    }
+  }
+}
