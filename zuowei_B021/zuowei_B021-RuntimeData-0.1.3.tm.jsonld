@@ -10,7 +10,7 @@
   "title": "zuowei B021 Thing Model RuntimeData",
   "description": "zuowei B021物模型 RuntimeData功能模块",
   "version": {
-    "model": "0.1.2"
+    "model": "0.1.3"
   },
   "events": {
     "UseRecord": {
@@ -18,6 +18,10 @@
       "data": {
         "type": "object",
         "properties": {
+          "seq": {
+            "title": "序列号",
+            "type": "integer"
+          },
           "Mode": {
             "title": "记录类型",
             "type": "integer",
@@ -40,11 +44,15 @@
         ]
       }
     },
-    "Error": {
+    "ErrorRecord": {
       "title": "故障上报",
       "data": {
         "type": "object",
         "properties": {
+          "seq": {
+            "title": "序列号",
+            "type": "integer"
+          },
           "ErrorCode": {
             "title": "故障码",
             "type": "integer",
@@ -67,6 +75,10 @@
       "data": {
         "type": "object",
         "properties": {
+          "seq": {
+            "title": "序列号",
+            "type": "integer"
+          },
           "Type": {
             "title": "翻身类型",
             "type": "integer",

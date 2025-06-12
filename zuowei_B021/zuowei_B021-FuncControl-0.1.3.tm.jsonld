@@ -10,7 +10,7 @@
   "title": "zuowei B021 Thing Model FuncControl",
   "description": "zuowei B021物模型 FuncControl功能模块",
   "version": {
-    "model": "0.1.2"
+    "model": "0.1.3"
   },
   "properties": {
     "SetHydraulicPressure": {
