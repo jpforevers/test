@@ -15,31 +15,31 @@
   "links": [
     {
       "rel": "tm:submodel",
-      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-FuncControl-0.1.2.tm.jsonld",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-FuncControl-0.1.3.tm.jsonld",
       "type": "application/tm+json",
       "instanceName": "FuncControl"
     },
     {
       "rel": "tm:submodel",
-      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-DeviceInfo-0.1.2.tm.jsonld",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-DeviceInfo-0.1.3.tm.jsonld",
       "type": "application/tm+json",
       "instanceName": "DeviceInfo"
     },
     {
       "rel": "tm:submodel",
-      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-RuntimeStatus-0.1.2.tm.jsonld",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-RuntimeStatus-0.1.3.tm.jsonld",
       "type": "application/tm+json",
       "instanceName": "RuntimeStatus"
     },
     {
       "rel": "tm:submodel",
-      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-RuntimeData-0.1.2.tm.jsonld",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-RuntimeData-0.1.3.tm.jsonld",
       "type": "application/tm+json",
       "instanceName": "RuntimeData"
     },
     {
       "rel": "tm:submodel",
-      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-CmdControl-0.1.2.tm.jsonld",
+      "href": "https://raw.githubusercontent.com/jpforevers/test/refs/heads/main/zuowei_B021/zuowei_B021-CmdControl-0.1.3.tm.jsonld",
       "type": "application/tm+json",
       "instanceName": "CmdControl"
     }
